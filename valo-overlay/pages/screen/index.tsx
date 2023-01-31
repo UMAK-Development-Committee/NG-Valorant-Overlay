@@ -1,8 +1,19 @@
 import Header from "@/components/core/header";
 import PlayerCard from "@/components/default/player";
+import useAgentDetails from "@/components/hooks/useAgentDetails";
+import useSocket from "@/components/hooks/useSocket";
 import { NextPage } from "next";
+import { useEffect } from "react";
 
 const GameScreen: NextPage = () => {
+
+  const { socket, isConnected } = useSocket();
+  const {details, registerSocket} = useAgentDetails(socket);
+
+  useEffect(() => {
+
+  }, [])
+
   return (
     <>
       {/* Main body */}

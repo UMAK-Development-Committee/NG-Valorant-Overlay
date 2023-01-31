@@ -101,7 +101,11 @@ def new_event(data):
     print("Sending new match_details")
     emit('receive_details',  {
          'match_details': match_details}, broadcast=True, include_self=False)
-
+    
+@app.route('/test_match_details', methods=['GET', 'POST'])
+def test_event():
+    emit('recieve_details', {
+         'match_details': constants.SAMPLE_COREGAME_DETAILS}, broadcast=True, include_self=False)
 
 @app.route('/edit_team_details', methods=['GET', 'POST'])
 @cross_origin(allow_headers=['*'])

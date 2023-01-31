@@ -53,7 +53,7 @@ function populateOverlay(matchDetails){
                 if(matchDetails[side][agent]["current_ultimate_points"]=="READY"){
                     ultimatePointsSpan.innerHTML="READY"
                 }else{
-                    ultimatePointsSpan.innerHTML=matchDetails[side][agent]["current_ultimate_points"]+"/"+matchDetails[side][agent]["required_ultimate_points"]
+                    ultimatePointsSpan.innerHTML=matchDetails[side][agent]["current_ultimate_points"]+"/"+matchDetails[side][agent][" "]
                 }
             }else{
                 ultimatePointsSpan.innerHTML="NA"
