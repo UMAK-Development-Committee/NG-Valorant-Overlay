@@ -1,8 +1,10 @@
 from subprocess import Popen
+import time
 
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 from flask_socketio import SocketIO, emit
+import socketio
 
 import constants
 from match_utils import MatchUtils
@@ -78,12 +80,20 @@ def get_match_details():
     # print("returning",match_details)
     return jsonify({"response": match_details})
 
+@app.route('/test', methods=['GET', 'POST'])
+@cross_origin(allow_headers=['*'])
+def test_match_details():
+    socket_io.emit('receive_details', {
+         'match_details': constants.corematch_example})
+    return {"status": True}
+
 
 @socket_io.on('connect')
 def test_connect():
     global match_details
     print("1 machine connected")
     emit('after connect',  {'data': 'Woke up'})
+    
 
 
 @socket_io.on('after connect')
@@ -101,11 +111,7 @@ def new_event(data):
     print("Sending new match_details")
     emit('receive_details',  {
          'match_details': match_details}, broadcast=True, include_self=False)
-    
-@app.route('/test_match_details', methods=['GET', 'POST'])
-def test_event():
-    emit('recieve_details', {
-         'match_details': constants.SAMPLE_COREGAME_DETAILS}, broadcast=True, include_self=False)
+
 
 @app.route('/edit_team_details', methods=['GET', 'POST'])
 @cross_origin(allow_headers=['*'])

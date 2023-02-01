@@ -3,35 +3,55 @@ import PlayerCard from "@/components/default/player";
 import useAgentDetails from "@/components/hooks/useAgentDetails";
 import useSocket from "@/components/hooks/useSocket";
 import { NextPage } from "next";
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 const GameScreen: NextPage = () => {
 
+  const router = useRouter();
+
+  const { teamA, teamB, swap } = router.query;
+
   const { socket, isConnected } = useSocket();
-  const {details, registerSocket} = useAgentDetails(socket);
+  const { details, registerSocket } = useAgentDetails(socket);
 
   useEffect(() => {
+    if (socket && isConnected) {
+      registerSocket();
+    }
 
-  }, [])
+    if (details) {
+      console.log(details);
+    }
+
+    if (router.isReady) {
+      console.log(teamA, teamB, swap);
+    }
+
+  }, [socket, isConnected, registerSocket, details, router.isReady])
 
   return (
     <>
       {/* Main body */}
       <div className="h-screen w-full ">
-        <Header />
+        {
+          details.blue.length == 0 || details.red.length == 0 ? <div /> : <>
+          <Header attackerTeam={(teamA as string)!} defenderTeam={(teamB as string)!} swapSides={swap == "true"} />
 
-        <div className="h-[88.3vh] grid grid-cols-2">
-          <div className="col-span-1 flex flex-col justify-end items-start">
+          <div className="h-[88.3vh] grid grid-cols-2">
+            <div className="col-span-1 flex flex-col justify-end items-start">
+              {
+                details[swap == "true" ? "red" : "blue"].map((val: any) => <PlayerCard key={val["agentName"]} details={val} />)
+              }
+            </div>
+            <div className="col-span-1 w-full flex flex-col justify-end content-end">
             {
-              Array.from({length: 5}).map((x, i) => <PlayerCard key={i} />)
-            }
+                details[swap == "true" ? "blue" : "red"].map((val: any) => <PlayerCard key={val["agentName"]} details={val} inverted={true} />)
+              }
+            </div>
           </div>
-          <div className="col-span-1 w-full flex flex-col justify-end content-end">
-          {
-              Array.from({length: 5}).map((_, i) => <PlayerCard key={i} inverted={true} />)
-            }
-          </div>
-        </div>
+          </>
+        }
       </div>
     </>
   )

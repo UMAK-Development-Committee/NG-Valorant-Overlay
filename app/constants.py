@@ -16,7 +16,8 @@ SAMPLE_COREGAME_DETAILS = {
             "rr": 46,
             "leaderboard": 0,
             "level": "143",
-            "team": "blue"
+            "team": "blue",
+            "current_ultimate_points": "4"
         },
         {
             "agent": "Skye",
@@ -25,7 +26,9 @@ SAMPLE_COREGAME_DETAILS = {
             "rr": 5,
             "leaderboard": 0,
             "level": "128",
-            "team": "blue"
+            "team": "blue",
+            "current_ultimate_points": "4"
+
         },
         {
             "agent": "Jett",
@@ -34,7 +37,9 @@ SAMPLE_COREGAME_DETAILS = {
             "rr": 91,
             "leaderboard": 0,
             "level": "76",
-            "team": "blue"
+            "team": "blue",
+            "current_ultimate_points": "4"
+
         },
         {
             "agent": "Viper",
@@ -43,7 +48,9 @@ SAMPLE_COREGAME_DETAILS = {
             "rr": 0,
             "leaderboard": 0,
             "level": "28",
-            "team": "blue"
+            "team": "blue",
+            "current_ultimate_points": "4"
+
         },
         {
             "agent": "Phoenix",
@@ -52,7 +59,9 @@ SAMPLE_COREGAME_DETAILS = {
             "rr": 41,
             "leaderboard": 0,
             "level": "17",
-            "team": "blue"
+            "team": "blue",
+            "current_ultimate_points": "READY"
+
         }
     ],
     "red": [
@@ -63,7 +72,8 @@ SAMPLE_COREGAME_DETAILS = {
             "rr": 0,
             "leaderboard": 0,
             "level": "210",
-            "team": "red"
+            "team": "red",
+            "current_ultimate_points": "4"
         },
         {
             "agent": "Reyna",
@@ -72,7 +82,9 @@ SAMPLE_COREGAME_DETAILS = {
             "rr": 0,
             "leaderboard": 0,
             "level": "156",
-            "team": "red"
+            "team": "red",
+            "current_ultimate_points": "4"
+
         },
         {
             "agent": "Viper",
@@ -81,7 +93,9 @@ SAMPLE_COREGAME_DETAILS = {
             "rr": 12,
             "leaderboard": 0,
             "level": "111",
-            "team": "red"
+            "team": "red",
+            "current_ultimate_points": "4"
+
         },
         {
             "agent": "Sage",
@@ -115,7 +129,8 @@ corematch_example = {
             "rr": 0,
             "team": "blue",
             "alive": True,
-            "health": 100, "weapon": "phantom"
+            "current_ultimate_points": "4",
+            "health": 50, "weapon": "phantom"
         },
         "jett": {
             "agent": "jett",
@@ -126,7 +141,8 @@ corematch_example = {
             "rr": 10,
             "team": "blue",
             "alive": True,
-            "health": 100, "weapon": "bucky"
+            "current_ultimate_points": "4",
+            "health": 67, "weapon": "bucky"
         },
         "phoenix": {
             "agent": "phoenix",
@@ -137,7 +153,8 @@ corematch_example = {
             "rr": 0,
             "team": "blue",
             "alive": True,
-            "health": 100, "weapon": "ares"
+            "current_ultimate_points": "READY",
+            "health": 90, "weapon": "ares"
         },
         "reyna": {
             "agent": "reyna",
@@ -148,6 +165,7 @@ corematch_example = {
             "rr": 72,
             "team": "blue",
             "alive": True,
+            "current_ultimate_points": "4",
             "health": 100, "weapon": "shorty"
         },
         "viper": {
@@ -159,6 +177,7 @@ corematch_example = {
             "rr": 0,
             "team": "blue",
             "alive": True,
+            "current_ultimate_points": "4",
             "health": 100, "weapon": "marshall"
         }
     },
@@ -172,6 +191,7 @@ corematch_example = {
             "rr": 60,
             "team": "red",
             "alive": True,
+            "current_ultimate_points": "READY",
             "health": 100, "weapon": "judge"
         },
         "killjoy": {
@@ -183,6 +203,7 @@ corematch_example = {
             "rr": 0,
             "team": "red",
             "alive": True,
+            "current_ultimate_points": "4",
             "health": 100, "weapon": "ghost"
         },
         "phoenix": {
@@ -194,6 +215,7 @@ corematch_example = {
             "rr": 10,
             "team": "red",
             "alive": True,
+            "current_ultimate_points": "4",
             "health": 100, "weapon": "spectre"
         },
         "raze": {
@@ -205,6 +227,7 @@ corematch_example = {
             "rr": 78,
             "team": "red",
             "alive": True,
+            "current_ultimate_points": "READY",
             "health": 100, "weapon": "stinger"
         },
         "reyna": {
@@ -216,6 +239,7 @@ corematch_example = {
             "rr": 98,
             "team": "red",
             "alive": True,
+            "current_ultimate_points": "4",
             "health": 100, "weapon": "vandal"
         }
     }

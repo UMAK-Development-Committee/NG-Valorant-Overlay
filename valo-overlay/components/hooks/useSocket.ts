@@ -13,6 +13,7 @@ const useSocket = () => {
     socketConnection.on('after connect', () => {
       setSocket(socketConnection);
       setConnectionState(true);
+      console.log("Client has connected to socket");
     });
   }, []);
 
