@@ -5,6 +5,11 @@ import { Inter } from '@next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  const startMatch = () => {
+    fetch("https://127.0.0.1:")
+  }
+
   return (
     <>
       <div className='absolute w-full h-full grid place-items-center'>

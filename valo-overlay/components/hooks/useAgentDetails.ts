@@ -26,6 +26,8 @@ const useAgentDetails = (socket: Socket) => {
     
 
             Object.keys(formattedData).map((val: any) => {
+		if (val == "score") return;
+
                 let currentSide = formattedData[val];
                 
                 let agents = Object.keys(currentSide);
