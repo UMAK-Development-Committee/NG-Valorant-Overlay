@@ -23,7 +23,8 @@
     "react-dom": "18.2.0",
     "socket.io": "^4.5.4",
     "socket.io-client": "^4.5.4",
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

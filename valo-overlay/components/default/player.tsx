@@ -26,8 +26,8 @@ const PlayerCard: FunctionComponent<PlayerCardAttributes> = (props) => {
 
   const LeftSideCard = () => {
     return (
-      <div className="my-3 w-[50%]">
-        <div className="w-full h-[11vh] flex flex-row">
+      <div className="my-2 w-[30%]">
+        <div className="w-full h-[6vh] flex flex-row">
           {/* Agent Icon */}
           <div className="w-[30%] h-full bg-black">
           <img className={`w-full h-full ${props.details["health"] <= 0 ? "grayscale" : ""}`} src={`AgentIcons/${capitalize(props.details["agentName"]!)}_icon.png`} />
@@ -44,7 +44,7 @@ const PlayerCard: FunctionComponent<PlayerCardAttributes> = (props) => {
             <div className="w-full h-[60%] p-1 px-2">
               <img className={`w-full h-full ${props.details["currentUltPoints"] == "READY" ? "opacity-100" : "opacity-50"}`} src={`UltIcons/${capitalize(props.details["agentName"]!)}_ult.png`} />
             </div>
-            <div className="w-full h-[40%] p-1 px-4">
+            <div className="w-full h-[40%] p-1 px-3">
               <img className="w-full h-full" src={`ShieldIcons/${props.details["shield"] ?? "none"}.png`} />
             </div>
           </div>
@@ -53,12 +53,12 @@ const PlayerCard: FunctionComponent<PlayerCardAttributes> = (props) => {
             <div className="h-[70%] w-full scale-x-[-1] px-6 py-2">
               <img className="w-full h-full" src={`WeaponImages/${props.details["weapon"]!}.png`}  />
             </div>
-            <div className="h-[30%] w-full text-white font-bold text-xs flex flex-row justify-start">
-              <span>{capitalize(props.details["agentName"] ?? "Agent")}</span>
+            <div className="h-[30%] w-full text-white text-xs flex flex-row justify-start">
+              <span className="text-[8px]">{capitalize(props.details["agentName"] ?? "Agent")}</span>
               &nbsp;
               <span> - </span>
               &nbsp;
-              <span>{props.details["name"] ?? "PLAYER"}</span>
+              <span className="text-[8px]">{props.details["name"] ?? "PLAYER"}</span>
             </div>
           </div>
               </> : <></>
@@ -75,8 +75,8 @@ const PlayerCard: FunctionComponent<PlayerCardAttributes> = (props) => {
   const RightSideCard = () => {
     return (
       <div className="w-full flex flex-col items-end">
-<div className="my-3 w-[50%] flex flex-col items-end justify-end ">
-      <div className="w-full h-[11vh] flex flex-row-reverse">
+<div className="my-2 w-[30%] flex flex-col items-end justify-end ">
+      <div className="w-full h-[6vh] flex flex-row-reverse">
         {/* Agent Icon */}
         <div className="w-[30%] h-full bg-black">
         <img className={`w-full h-full ${props.details["health"] <= 0 ? "grayscale" : ""}`} src={`AgentIcons/${capitalize(props.details["agentName"]!)}_icon.png`} />
@@ -91,7 +91,7 @@ const PlayerCard: FunctionComponent<PlayerCardAttributes> = (props) => {
           <div className="w-full h-[60%] p-1 px-2">
             <img className={`w-full h-full ${props.details["currentUltPoints"] == "READY" ? "opacity-100" : "opacity-50"}`} src={`UltIcons/${capitalize(props.details["agentName"]!)}_ult.png`} />
           </div>
-          <div className="w-full h-[40%] p-1 px-4">
+          <div className="w-full h-[40%] p-1 px-3">
             <img className="w-full h-full" src={`ShieldIcons/${props.details["shield"] ?? "none"}.png`} />
           </div>
         </div>
@@ -100,12 +100,12 @@ const PlayerCard: FunctionComponent<PlayerCardAttributes> = (props) => {
           <div className="h-[70%] w-full scale-x-[-1] px-6 py-2">
             <img className="w-full h-full scale-x-[-1]" src={`WeaponImages/${props.details["weapon"]!}.png`}  />
           </div>
-          <div className="h-[30%] w-full text-white font-bold text-xs flex flex-row justify-end">
-            <span>{capitalize(props.details["agentName"] ?? "Agent")}</span>
+          <div className="h-[30%] w-full text-white text-xs flex flex-row justify-end">
+            <span className="text-[8px]">{capitalize(props.details["agentName"] ?? "Agent")}</span>
             &nbsp;
             <span> - </span>
             &nbsp;
-            <span>{props.details["name"] ?? "PLAYER"}</span>
+            <span className="text-[8px]">{props.details["name"] ?? "PLAYER"}</span>
           </div>
         </div>
             </> : <></>

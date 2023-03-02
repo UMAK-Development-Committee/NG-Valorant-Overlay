@@ -26,32 +26,34 @@ const useAgentDetails = (socket: Socket) => {
     
 
             Object.keys(formattedData).map((val: any) => {
-		if (val == "score") return;
-
-                let currentSide = formattedData[val];
+		        if (val == "red" || val == "blue") {
+                    let currentSide = formattedData[val];
                 
-                let agents = Object.keys(currentSide);
-    
-                agents.forEach((agent) => {
-                    const shield: string | null = currentSide[agent]["shield"];
-                    const agentName: string = agent;
-                    const name: AgentName = currentSide[agent]["name"];
-                    const currentUltPoints: any = currentSide[agent]["current_ultimate_points"];
-                    const weapon: string = currentSide[agent]["weapon"];
-                    const alive: boolean = currentSide[agent]["alive"];
-                    const health: number = currentSide[agent]["health"];
-                    
-                    // @ts-ignore
-                    allTeamData[val].push({
-                        shield,
-                        agentName,
-                        currentUltPoints,
-                        weapon,
-                        alive,
-                        name,
-                        health
+                    let agents = Object.keys(currentSide);
+        
+                    agents.forEach((agent) => {
+                        const shield: string | null = currentSide[agent]["shield"];
+                        const agentName: string = agent;
+                        const name: AgentName = currentSide[agent]["name"];
+                        const currentUltPoints: any = currentSide[agent]["current_ultimate_points"];
+                        const weapon: string = currentSide[agent]["weapon"];
+                        const alive: boolean = currentSide[agent]["alive"];
+                        const health: number = currentSide[agent]["health"];
+                        
+                        // @ts-ignore
+                        allTeamData[val].push({
+                            shield,
+                            agentName,
+                            currentUltPoints,
+                            weapon,
+                            alive,
+                            name,
+                            health
+                        })
                     })
-                })
+                }
+
+                
             })
             
             allTeamData["score"] = formattedData["score"];

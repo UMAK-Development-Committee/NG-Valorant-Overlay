@@ -35,16 +35,16 @@ const GameScreen: NextPage = () => {
       {/* Main body */}
       <div className="h-screen w-full ">
         {
-          details.blue.length == 0 || details.red.length == 0 ? <div /> : <>
+          details.blue.length == 0 && details.red.length == 0 ? <div /> : <>
           <Header attackerTeam={(teamA as string)!} defenderTeam={(teamB as string)!} swapSides={swap == "true"} />
 
           <div className="h-[88.3vh] grid grid-cols-2">
-            <div className="col-span-1 flex flex-col justify-end items-start">
+            <div className="col-span-1 flex flex-col justify-end items-start mb-[20px]">
               {
                 details[swap == "true" ? "red" : "blue"].map((val: any) => <PlayerCard key={val["agentName"]} details={val} />)
               }
             </div>
-            <div className="col-span-1 w-full flex flex-col justify-end content-end">
+            <div className="col-span-1 w-full flex flex-col justify-end content-end mb-[20px]">
             {
                 details[swap == "true" ? "blue" : "red"].map((val: any) => <PlayerCard key={val["agentName"]} details={val} inverted={true} />)
               }
